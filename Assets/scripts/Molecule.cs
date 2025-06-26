@@ -1547,6 +1547,8 @@ namespace chARpack
             changeBondWindowInstance = Instantiate(changeBondWindowPrefab);
             var cb = changeBondWindowInstance.GetComponent<ManipulateBondTerm>();
             cb.bt = bond;
+            cb.molecule = this;
+            cb.bondTermId = bondTerms.IndexOf(bond);
             var id = bondTerms.IndexOf(bond);
             cb.okButton.GetComponent<Button>().onClick.AddListener(delegate { changeBondParametersUI(changeBondWindowInstance, id); });
 #endif
@@ -1787,6 +1789,8 @@ namespace chARpack
             changeBondWindowInstance = Instantiate(changeBondWindowPrefab);
             var cb = changeBondWindowInstance.GetComponent<ManipulateBondTerm>();
             cb.at = bond;
+            cb.molecule = this;
+            cb.bondTermId = angleTerms.IndexOf(bond);
             var id = angleTerms.IndexOf(bond);
             cb.okButton.GetComponent<Button>().onClick.AddListener(delegate { changeAngleParametersUI(changeBondWindowInstance, id); });
 #endif
@@ -1974,6 +1978,8 @@ namespace chARpack
             changeBondWindowInstance = Instantiate(changeBondWindowPrefab);
             var cb = changeBondWindowInstance.GetComponent<ManipulateBondTerm>();
             cb.tt = bond;
+            cb.molecule = this;
+            cb.bondTermId = torsionTerms.IndexOf(bond);
             var id = torsionTerms.IndexOf(bond);
             cb.okButton.GetComponent<Button>().onClick.AddListener(delegate { changeTorsionParametersUI(changeBondWindowInstance, id); });
 #endif

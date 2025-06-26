@@ -14,8 +14,10 @@ namespace chARpack
         public TMP_Text topText;
         public TMP_InputField topInput;
         public TMP_Text bottomText;
-        public TMP_InputField bottomInput;
         public Button saveButton;
+        public Button orderButton1;
+        public Button orderButton2;
+        public Button orderButton3;
         private ForceField.BondTerm bt_;
         private ForceField.AngleTerm at_;
         private ForceField.TorsionTerm tt_;
@@ -34,8 +36,15 @@ namespace chARpack
             topText.text += SettingsData.useAngstrom ? " (\u00C5)" : " (pm)";
             var text = SettingsData.useAngstrom ? (bt.eqDist * 0.01f).ToString() : bt.eqDist.ToString();
             topInput.text = text;
-            bottomInput.text = bt.order.ToString();
             bottomText.text = "Order";
+            HighlightOrderButton(bt.order);
+        }
+
+        private void HighlightOrderButton(float order)
+        {
+            orderButton1.image.color = (order == 1) ? Color.yellow : Color.white;
+            orderButton2.image.color = (order == 2) ? Color.yellow : Color.white;
+            orderButton3.image.color = (order == 3) ? Color.yellow : Color.white;
         }
 
         public ForceField.AngleTerm at { get => at_; set { at_ = value; initTextFieldsAT(); } }
@@ -45,7 +54,7 @@ namespace chARpack
             topText.text = "Equilibrium Angle";
             bottomText.text = "kAngle";
             topInput.text = at.eqAngle.ToString();
-            bottomInput.text = at.kAngle.ToString();
+            bottomText.text = "kAngle";
         }
 
         public ForceField.TorsionTerm tt { get => tt_; set { tt_ = value; initTextFieldsTT(); } }
@@ -55,7 +64,7 @@ namespace chARpack
             topText.text = "Equilibrium Angle";
             bottomText.text = "vk";
             topInput.text = tt.eqAngle.ToString();
-            bottomInput.text = tt.vk.ToString();
+            bottomText.text = "vk";
         }
 
         // Start is called before the first frame update
@@ -69,34 +78,20 @@ namespace chARpack
             rect.position = save;
             var drag = title.gameObject.AddComponent<Draggable>();
             drag.target = transform;
-
+            orderButton1.onClick.AddListener(() => SetOrder(1));
+            orderButton2.onClick.AddListener(() => SetOrder(2));
+            orderButton3.onClick.AddListener(() => SetOrder(3));
         }
 
-        /// <summary>
-        /// Converts user input to the closest valid bond order (1, 2, or 3)
-        /// </summary>
-        /// <param name="userInput">The user's input value</param>
-        /// <returns>The closest valid bond order</returns>
-        private float ClampBondOrder(float userInput)
+        private void SetOrder(float order)
         {
-            if (userInput <= 1.5f)
-                return 1.0f;
-            else if (userInput <= 2.5f)
-                return 2.0f;
-            else
-                return 3.0f;
+            bt_.order = order;
+            HighlightOrderButton(order);
         }
 
         public void changeBondParametersBT()
         {
             bt_.eqDist = SettingsData.useAngstrom ? float.Parse(topInput.text) * 100 : float.Parse(topInput.text);
-            
-            // Parse user input and clamp to valid bond order
-            float userInput = float.Parse(bottomInput.text);
-            bt_.order = ClampBondOrder(userInput);
-            
-            // Update the input field to show the clamped value
-            bottomInput.text = bt_.order.ToString();
         }
 
         /// <summary>
@@ -106,7 +101,7 @@ namespace chARpack
         public void changeBondParametersAT()
         {
             at_.eqAngle = float.Parse(topInput.text);
-            at_.kAngle = float.Parse(bottomInput.text);
+            at_.kAngle = float.Parse(bottomText.text);
         }
 
         /// <summary>
@@ -116,7 +111,7 @@ namespace chARpack
         public void changeBondParametersTT()
         {
             tt_.eqAngle = float.Parse(topInput.text);
-            tt_.vk = float.Parse(bottomInput.text);
+            tt_.vk = float.Parse(bottomText.text);
         }
         public void closeThis()
         {

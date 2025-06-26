@@ -14,6 +14,11 @@ namespace chARpack
         public GameObject okButton;
         public GameObject angleOrDistLabel;
         public GameObject kLabel;
+        public GameObject orderButton1;
+        public GameObject orderButton2;
+        public GameObject orderButton3;
+        public Molecule molecule;
+        public int bondTermId;
 
         private ForceField.BondTerm bt_;
         private ForceField.AngleTerm at_;
@@ -126,6 +131,25 @@ namespace chARpack
                     kInputField.GetComponent<myInputField>().DeactivateInputField();
                 }
             }
+        }
+
+        private void SetOrder(float order)
+        {
+            bt_.order = order;
+
+            if (molecule != null && bondTermId >= 0)
+            {
+                molecule.changeBondParameters(bt_, bondTermId);
+            }
+
+            Destroy(this.gameObject);
+        }
+
+        void Start()
+        {
+            orderButton1.GetComponent<Button>().onClick.AddListener(() => SetOrder(1));
+            orderButton2.GetComponent<Button>().onClick.AddListener(() => SetOrder(2));
+            orderButton3.GetComponent<Button>().onClick.AddListener(() => SetOrder(3));
         }
     }
 }
