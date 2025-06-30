@@ -51,6 +51,14 @@ namespace chARpack
         {
             base.Start();
 
+            // 隐藏delete、freeze和hybrid相关按钮
+            deleteButton.gameObject.SetActive(false);
+            freezeButton.gameObject.SetActive(false);
+            hybrid.SetActive(false);
+            hybridUp.gameObject.SetActive(false);
+            hybridDown.gameObject.SetActive(false);
+            currentHybrid.gameObject.SetActive(false);
+
             hyb = linkedAtom.m_data.m_hybridization;
             currentHybrid.text = hyb.ToString();
 
@@ -78,18 +86,19 @@ namespace chARpack
             if (isSmall)
             {
                 isSmall = false;
-                deleteButton.gameObject.SetActive(true);
-                freezeButton.gameObject.SetActive(true);
-                hybrid.SetActive(true);
+                // 不再显示delete、freeze、hybrid
+                // deleteButton.gameObject.SetActive(true);
+                // freezeButton.gameObject.SetActive(true);
+                // hybrid.SetActive(true);
                 infobox.SetActive(true);
                 rect.offsetMin = new Vector2(rect.offsetMin.x, rect.offsetMin.y - 230);
             }
             else
             {
                 isSmall = true;
-                deleteButton.gameObject.SetActive(false);
-                freezeButton.gameObject.SetActive(false);
-                hybrid.SetActive(false);
+                // deleteButton.gameObject.SetActive(false);
+                // freezeButton.gameObject.SetActive(false);
+                // hybrid.SetActive(false);
                 infobox.SetActive(false);
                 rect.offsetMin = new Vector2(rect.offsetMin.x, rect.offsetMin.y + 230);
             }

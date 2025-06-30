@@ -44,8 +44,11 @@ namespace chARpack
             {
                 EventManager.Singleton.DeviceLoadMolecule(m_mol_name);
                 GlobalCtrl.Singleton.LoadMolecule(m_mol_name);
+
+                if (HideMenuOnLoad.Instance != null)
+                    HideMenuOnLoad.Instance.HideMenu();
             }
-            loadSaveWindow.Singleton.gameObject.SetActive(true);
+            // loadSaveWindow.Singleton.gameObject.SetActive(true);
         }
 
     }

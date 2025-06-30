@@ -1494,63 +1494,24 @@ namespace chARpack
             // create tool tip
             toolTipInstance = Instantiate(myAtomToolTipPrefab);
             // calc position for tool tip
-            // first: get position in the bounding box and decide if the tool tip spawns left, right, top or bottom of the box
             Vector3 mol_center = m_molecule.getCenter();
-            // project to camera coordnates
             Vector2 mol_center_in_cam = new Vector2(Vector3.Dot(mol_center, GlobalCtrl.Singleton.mainCamera.transform.right), Vector3.Dot(mol_center, GlobalCtrl.Singleton.mainCamera.transform.up));
             Vector2 atom_pos_in_cam = new Vector2(Vector3.Dot(transform.position, GlobalCtrl.Singleton.mainCamera.transform.right), Vector3.Dot(transform.position, GlobalCtrl.Singleton.mainCamera.transform.up));
-            // calc diff
             Vector2 diff_mol_atom = atom_pos_in_cam - mol_center_in_cam;
-            // enhance diff for final tool tip pos
             Vector3 ttpos = transform.position + toolTipDistanceWeight * diff_mol_atom[0] * GlobalCtrl.Singleton.mainCamera.transform.right + toolTipDistanceWeight * diff_mol_atom[1] * GlobalCtrl.Singleton.mainCamera.transform.up;
             toolTipInstance.transform.position = ttpos;
-            // add atom as connector
             toolTipInstance.GetComponent<myToolTipConnector>().Target = gameObject;
-            var con_atoms = connectedAtoms();           string toolTipText = getToolTipText(m_data.m_name, m_data.m_mass, m_data.m_radius, con_atoms.Count);
+            var con_atoms = connectedAtoms();
+            string toolTipText = getToolTipText(m_data.m_name, m_data.m_mass, m_data.m_radius, con_atoms.Count);
             toolTipInstance.GetComponent<DynamicToolTip>().ToolTipText = toolTipText;
-            GameObject modifyHybridizationInstance = null;
-            if (m_data.m_abbre != "Dummy")
-            {
 
-                if (m_data.m_abbre == "H")
-                {
-                    var modifyButtonInstance = Instantiate(modifyMeButtonPrefab);
-                    modifyButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { toolTipHelperChangeAtom("Dummy"); });
-                    modifyButtonInstance.GetComponent<ButtonConfigHelper>().MainLabelText = localizationManager.GetLocalizedString("ToDummy");
-                    toolTipInstance.GetComponent<DynamicToolTip>().addContent(modifyButtonInstance);
-                }
-
-                var delButtonInstance = Instantiate(deleteMeButtonPrefab);
-                delButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { GlobalCtrl.Singleton.deleteAtomUI(this); });
-                toolTipInstance.GetComponent<DynamicToolTip>().addContent(delButtonInstance);
-
-                modifyHybridizationInstance = Instantiate(modifyHybridizationPrefab);
-                modifyHybridizationInstance.GetComponent<modifyHybridization>().currentAtom = this;
-            }
-            else
-            {
-                var modifyButtonInstance = Instantiate(modifyMeButtonPrefab);
-                modifyButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { toolTipHelperChangeAtom("H"); });
-                modifyButtonInstance.GetComponent<ButtonConfigHelper>().MainLabelText = localizationManager.GetLocalizedString("ToHydrogen");
-                toolTipInstance.GetComponent<DynamicToolTip>().addContent(modifyButtonInstance);
-            }
-            var freezeButtonInstance = Instantiate(freezeMePrefab);
-            freezeButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { freezeUI(!frozen); });
-            toolTipInstance.GetComponent<DynamicToolTip>().addContent(freezeButtonInstance);
-            freezeButton = freezeButtonInstance;
-
+            // 只保留close按钮
             var closeButtonInstance = Instantiate(closeMeButtonPrefab);
             closeButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { markAtomUI(false); });
             toolTipInstance.GetComponent<DynamicToolTip>().addContent(closeButtonInstance);
 
-            // add last
-            if (modifyHybridizationInstance != null)
-            {
-                toolTipInstance.GetComponent<DynamicToolTip>().addContent(modifyHybridizationInstance);
-            }
-
-            // Starting color for indicator
-            setFrozenVisual(frozen);
+            // 不再添加delete、freeze、杂化等级等按钮
+            // setFrozenVisual(frozen); // 如果只影响UI可以不调用
 #endif
         }
 

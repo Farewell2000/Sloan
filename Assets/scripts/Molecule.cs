@@ -1316,40 +1316,11 @@ namespace chARpack
             var max_dist = getMaxDistFromCenter(mol_center);
             string toolTipText = getAtomToolTipText(tot_mass, max_dist);
             toolTipInstance.GetComponent<DynamicToolTip>().ToolTipText = toolTipText;
-            //var keepConfigSwitchButtonInstance = Instantiate(modifyMeButtonPrefab);
-            //keepConfigSwitchButtonInstance.GetComponent<ButtonConfigHelper>().MainLabelText = "keepConfig";
-            //keepConfigSwitchButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { GlobalCtrl.Singleton.toggleKeepConfigUI(this); });
-            //toolTipInstance.GetComponent<DynamicToolTip>().addContent(keepConfigSwitchButtonInstance);
-            var toggleDummiesButtonInstance = Instantiate(toggleDummiesButtonPrefab);
-            toggleDummiesButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { toggleDummiesUI(); });
-            toolTipInstance.GetComponent<DynamicToolTip>().addContent(toggleDummiesButtonInstance);
-
-            var copyButtonInstance = Instantiate(copyButtonPrefab);
-            copyButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { GlobalCtrl.Singleton.copyMolecule(this); });
-            toolTipInstance.GetComponent<DynamicToolTip>().addContent(copyButtonInstance);
 
             var closeButtonInstance = Instantiate(closeMeButtonPrefab);
             closeButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { markMoleculeUI(false); });
             toolTipInstance.GetComponent<DynamicToolTip>().addContent(closeButtonInstance);
 
-            // making sure the delete and close buttons are not too close together; has to be improved
-            //toolTipInstance.GetComponent<DynamicToolTip>().addContent(new GameObject());
-
-            var scaleMoleculeButtonInstance = Instantiate(scaleMoleculeButtonPrefab);
-            scaleMoleculeButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { toggleScalingSlider(); });
-            toolTipInstance.GetComponent<DynamicToolTip>().addContent(scaleMoleculeButtonInstance);
-
-            var freezeMoleculeButtonInstance = Instantiate(freezeMeButtonPrefab);
-            freezeMoleculeButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { freezeUI(!frozen); });
-            toolTipInstance.GetComponent<DynamicToolTip>().addContent(freezeMoleculeButtonInstance);
-            freezeButton = freezeMoleculeButtonInstance;
-
-            var delButtonInstance = Instantiate(deleteMeButtonPrefab);
-            delButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { GlobalCtrl.Singleton.deleteMoleculeUI(this); });
-            toolTipInstance.GetComponent<DynamicToolTip>().addContent(delButtonInstance);
-
-            // Starting color for indicators
-            setFrozenVisual(frozen);
 #endif
         }
 
