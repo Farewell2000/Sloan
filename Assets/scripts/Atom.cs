@@ -978,6 +978,8 @@ namespace chARpack
             }
             else
             {
+                //define dummy opactiy
+                float dunmmy_opactiy = 0.4f;
                 // reset or nothing
                 outline_component.enabled = false;
                 previousHighlightType = currentHighlightType;
@@ -991,7 +993,7 @@ namespace chARpack
                     var renderer = GetComponent<Renderer>();
                     renderer.material = GlobalCtrl.Singleton.dummyMatPrefab;
                     var current_color = renderer.material.color;
-                    renderer.material.color = new Color(current_color.r, current_color.g, current_color.b, m_molecule.getOpactiy());
+                    renderer.material.color = new Color(current_color.r, current_color.g, current_color.b, m_molecule.getOpactiy() * dunmmy_opactiy);
                 }
                 else
                 {
