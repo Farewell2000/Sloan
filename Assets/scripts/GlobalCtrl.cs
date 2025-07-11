@@ -1780,6 +1780,10 @@ namespace chARpack
                             {
                                 // only allowed to merge when in async or solo mode
                                 MergeMolecule(d1, d2);
+                            } 
+                            else {
+                                // no matter when in async or solo
+                                MergeMolecule(d1, d2);
                             }
                         }
                         else
@@ -1789,6 +1793,10 @@ namespace chARpack
                             if (LoginData.singlePlayer || LoginData.isServer || SettingsData.syncMode == TransitionManager.SyncMode.Async)
                             {
                                 // only allowed to merge when in async or solo mode
+                                MergeMolecule(d2, d1);
+                            }
+                            else {
+                                // no matter when in async or solo
                                 MergeMolecule(d2, d1);
                             }
                         }
