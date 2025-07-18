@@ -121,7 +121,9 @@ namespace chARpack
 #if CHARPACK_NETWORKING
             if (NetworkManagerClient.Singleton)
             {
-                return UserClient.list[NetworkManagerClient.Singleton.Client.Id].highlightFocusID;
+                return 0;
+
+                // return UserClient.list[NetworkManagerClient.Singleton.Client.Id].highlightFocusID;
             }
             else
             {

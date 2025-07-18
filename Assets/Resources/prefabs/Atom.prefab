@@ -237,6 +237,7 @@ MonoBehaviour:
   structure_coords: {x: 0, y: 0}
   structure_interactible: {fileID: 0}
   mouse_offset: {x: 0, y: 0, z: 0}
+  breakActionConsumed: 0
   m_id: 0
   m_molecule: {fileID: 0}
   m_data:

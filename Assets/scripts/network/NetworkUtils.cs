@@ -58,8 +58,13 @@ namespace chARpack
             // prepare clients for the messages'
             Message startMessage = createMessage(MessageSendMode.Reliable, messageSignature);
             startMessage.AddString("start");
+            toServer = false;
+            Debug.Log(toServer);
+
+
             if (toServer)
             {
+                
                 NetworkManagerClient.Singleton.Client.Send(startMessage);
             }
             else
@@ -401,6 +406,9 @@ namespace chARpack
             // prepare clients for the messages'
             Message startMessage = NetworkUtils.createMessage(MessageSendMode.Reliable, messageSignature);
             startMessage.AddString("start");
+
+
+
             if (toServer)
             {
                 NetworkManagerClient.Singleton.Client.Send(startMessage);

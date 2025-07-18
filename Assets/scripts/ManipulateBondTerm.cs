@@ -16,7 +16,6 @@ namespace chARpack
         public GameObject kLabel;
         public GameObject orderButton1;
         public GameObject orderButton2;
-        public GameObject orderButton3;
         public Molecule molecule;
         public int bondTermId;
 
@@ -141,6 +140,48 @@ namespace chARpack
             {
                 molecule.changeBondParameters(bt_, bondTermId);
             }
+            else
+            {
+                // If molecule is null, try to find it and the bondTermId
+                // This happens when the tooltip is created directly from bond click
+                var atoms = FindObjectsOfType<Atom>();
+                foreach (var atom in atoms)
+                {
+                    if (atom.m_molecule != null)
+                    {
+                        var mol = atom.m_molecule;
+                        
+                        // Check if this molecule contains the atoms we're looking for
+                        if (bt_.Atom1 < mol.atomList.Count && bt_.Atom2 < mol.atomList.Count)
+                        {
+                            var atom1 = mol.atomList[bt_.Atom1];
+                            var atom2 = mol.atomList[bt_.Atom2];
+                            
+                            // Verify these atoms actually have a bond between them
+                            var visualBond = atom1.getBond(atom2);
+                            if (visualBond != null)
+                            {
+                                // Find the exact bondTerm that matches this visual bond
+                                for (int i = 0; i < mol.bondTerms.Count; i++)
+                                {
+                                    var bondTerm = mol.bondTerms[i];
+                                    if (bondTerm.Atom1 == bt_.Atom1 && bondTerm.Atom2 == bt_.Atom2)
+                                    {
+                                        // Double-check: verify the visual bond corresponds to this bondTerm
+                                        if (visualBond.atomID1 == bondTerm.Atom1 && visualBond.atomID2 == bondTerm.Atom2 ||
+                                            visualBond.atomID1 == bondTerm.Atom2 && visualBond.atomID2 == bondTerm.Atom1)
+                                        {
+                                            mol.changeBondParameters(bt_, i);
+                                            Destroy(this.gameObject);
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
             Destroy(this.gameObject);
         }
@@ -149,7 +190,6 @@ namespace chARpack
         {
             orderButton1.GetComponent<Button>().onClick.AddListener(() => SetOrder(1));
             orderButton2.GetComponent<Button>().onClick.AddListener(() => SetOrder(2));
-            orderButton3.GetComponent<Button>().onClick.AddListener(() => SetOrder(3));
         }
     }
 }

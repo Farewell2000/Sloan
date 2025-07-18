@@ -21,6 +21,8 @@ namespace chARpack
         private ForceField.BondTerm bt_;
         private ForceField.AngleTerm at_;
         private ForceField.TorsionTerm tt_;
+        public Molecule molecule;
+        public int bondTermId;
         public ForceField.BondTerm bt { get => bt_; set { bt_ = value; initTextFieldsBT(); } }
 
         void OnGUI()
@@ -87,6 +89,52 @@ namespace chARpack
         {
             bt_.order = order;
             HighlightOrderButton(order);
+            
+            if (molecule != null && bondTermId >= 0)
+            {
+                molecule.changeBondParameters(bt_, bondTermId);
+            }
+            else
+            {
+                // If molecule is null, try to find it and the bondTermId
+                // This happens when the tooltip is created directly from bond click
+                var atoms = FindObjectsOfType<Atom>();
+                foreach (var atom in atoms)
+                {
+                    if (atom.m_molecule != null)
+                    {
+                        var mol = atom.m_molecule;
+                        
+                        // Check if this molecule contains the atoms we're looking for
+                        if (bt_.Atom1 < mol.atomList.Count && bt_.Atom2 < mol.atomList.Count)
+                        {
+                            var atom1 = mol.atomList[bt_.Atom1];
+                            var atom2 = mol.atomList[bt_.Atom2];
+                            
+                            // Verify these atoms actually have a bond between them
+                            var visualBond = atom1.getBond(atom2);
+                            if (visualBond != null)
+                            {
+                                // Find the exact bondTerm that matches this visual bond
+                                for (int i = 0; i < mol.bondTerms.Count; i++)
+                                {
+                                    var bondTerm = mol.bondTerms[i];
+                                    if (bondTerm.Atom1 == bt_.Atom1 && bondTerm.Atom2 == bt_.Atom2)
+                                    {
+                                        // Double-check: verify the visual bond corresponds to this bondTerm
+                                        if (visualBond.atomID1 == bondTerm.Atom1 && visualBond.atomID2 == bondTerm.Atom2 ||
+                                            visualBond.atomID1 == bondTerm.Atom2 && visualBond.atomID2 == bondTerm.Atom1)
+                                        {
+                                            mol.changeBondParameters(bt_, i);
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         public void changeBondParametersBT()

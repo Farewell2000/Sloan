@@ -711,6 +711,8 @@ namespace chARpack
 
             gameObject.name = m_data.m_name;
             gameObject.tag = "Atom";
+
+            UnityEngine.Debug.Log("f_nit");
             //gameObject.layer = 6;
             //GetComponent<SphereCollider>().isTrigger = true;
             StartCoroutine(delayTriggerActivation());
@@ -980,6 +982,8 @@ namespace chARpack
             {
                 //define dummy opactiy
                 float dunmmy_opactiy = 0.4f;
+
+
                 // reset or nothing
                 outline_component.enabled = false;
                 previousHighlightType = currentHighlightType;
@@ -1013,9 +1017,12 @@ namespace chARpack
         {
             if (m_molecule.getIsInteractable())
             {
-                //UnityEngine.Debug.Log($"[Atom] Collision Detected: {m_molecule.m_id} {m_id}");
+                // UnityEngine.Debug.Log($"[Atom] Collision Detected: {m_molecule.m_id} and {m_id}");
                 if (collider.name.StartsWith("Dummy") && name.StartsWith("Dummy"))
                 {
+                    UnityEngine.Debug.Log($"This is the collision between:  {collider.name} and { name }");
+                    UnityEngine.Debug.Log(GlobalCtrl.Singleton);
+                    UnityEngine.Debug.Log($"[atom]This is the collision between:  {collider.GetComponent<Atom>()} and { GetComponent<Atom>() }");
                     GlobalCtrl.Singleton.TryAddCollision(collider.GetComponent<Atom>(), GetComponent<Atom>());
                 }
             }
@@ -1507,13 +1514,10 @@ namespace chARpack
             string toolTipText = getToolTipText(m_data.m_name, m_data.m_mass, m_data.m_radius, con_atoms.Count);
             toolTipInstance.GetComponent<DynamicToolTip>().ToolTipText = toolTipText;
 
-            // 只保留close按钮
             var closeButtonInstance = Instantiate(closeMeButtonPrefab);
             closeButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { markAtomUI(false); });
             toolTipInstance.GetComponent<DynamicToolTip>().addContent(closeButtonInstance);
 
-            // 不再添加delete、freeze、杂化等级等按钮
-            // setFrozenVisual(frozen); // 如果只影响UI可以不调用
 #endif
         }
 

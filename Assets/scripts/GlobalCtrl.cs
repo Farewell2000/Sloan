@@ -640,6 +640,13 @@ namespace chARpack
                         return;
                     }
                 }
+                else
+                {
+                    if (!deleteBond(to_delete))
+                    {
+                        return;
+                    }
+                }
                 EventManager.Singleton.DeleteBond((ushort)bond_id, mol_id);
             }
             catch (Exception e)
@@ -865,6 +872,10 @@ namespace chARpack
             {
                 if (to_delete.isMarked) to_delete.markAtomUI(false);
                 if (LoginData.singlePlayer || LoginData.isServer || SettingsData.syncMode == TransitionManager.SyncMode.Async)
+                {
+                    deleteAtom(to_delete);
+                }
+                else
                 {
                     deleteAtom(to_delete);
                 }

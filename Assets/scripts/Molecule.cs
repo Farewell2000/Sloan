@@ -1432,9 +1432,86 @@ namespace chARpack
             string toolTipText = getBondToolTipText(term.eqDist / 100, dist.getDistanceInAngstrom(), term.order);
             toolTipInstance.GetComponent<DynamicToolTip>().ToolTipText = toolTipText;
 
-            var modifyButtonInstance = Instantiate(modifyMeButtonPrefab);
-            modifyButtonInstance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { createChangeBondWindow(term); });
-            toolTipInstance.GetComponent<DynamicToolTip>().addContent(modifyButtonInstance);
+            // Add quick order buttons for bond orders 1, 2, and 3
+            // Find the correct index for this bond term
+            int termIndex = -1;
+            for (int i = 0; i < bondTerms.Count; i++)
+            {
+                if (bondTerms[i].Atom1 == term.Atom1 && bondTerms[i].Atom2 == term.Atom2)
+                {
+                    termIndex = i;
+                    break;
+                }
+            }
+            
+            var orderButton1Instance = Instantiate(modifyMeButtonPrefab);
+            orderButton1Instance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { 
+                if (termIndex >= 0)
+                {
+                    var updatedTerm = bondTerms[termIndex];
+                    updatedTerm.order = 1; 
+                    bondTerms[termIndex] = updatedTerm;
+                    changeBondParameters(updatedTerm, termIndex);
+                    string updatedToolTipText = getBondToolTipText(updatedTerm.eqDist / 100, dist.getDistanceInAngstrom(), updatedTerm.order);
+                    toolTipInstance.GetComponent<DynamicToolTip>().ToolTipText = updatedToolTipText;
+                }
+            });
+            // Try to find the text component to change text
+            var iconAndText1 = orderButton1Instance.transform.Find("IconAndText");
+            if (iconAndText1 != null)
+            {
+                var textMeshPro1 = iconAndText1.transform.Find("TextMeshPro");
+                if (textMeshPro1 != null)
+                {
+                    var textComponent = textMeshPro1.GetComponent<TMPro.TextMeshPro>();
+                    if (textComponent != null)
+                    {
+                        textComponent.text = "Order 1";
+                    }
+                    else
+                    {
+                        UnityEngine.Debug.LogWarning("TextMeshPro component not found on TextMeshPro");
+                    }
+                }
+                else
+                {
+                    UnityEngine.Debug.LogWarning("TextMeshPro child not found in IconAndText");
+                }
+            }
+            else
+            {
+                UnityEngine.Debug.LogWarning("IconAndText child not found in orderButton1Instance");
+            }
+            toolTipInstance.GetComponent<DynamicToolTip>().addContent(orderButton1Instance);
+
+            var orderButton2Instance = Instantiate(modifyMeButtonPrefab);
+            orderButton2Instance.GetComponent<ButtonConfigHelper>().OnClick.AddListener(delegate { 
+                if (termIndex >= 0)
+                {
+                    var updatedTerm = bondTerms[termIndex];
+                    updatedTerm.order = 2; 
+                    bondTerms[termIndex] = updatedTerm;
+                    changeBondParameters(updatedTerm, termIndex);
+                    string updatedToolTipText = getBondToolTipText(updatedTerm.eqDist / 100, dist.getDistanceInAngstrom(), updatedTerm.order);
+                    toolTipInstance.GetComponent<DynamicToolTip>().ToolTipText = updatedToolTipText;
+                }
+            });
+            // Try to find the text component to change text
+            var iconAndText2 = orderButton2Instance.transform.Find("IconAndText");
+            if (iconAndText2 != null)
+            {
+                var textMeshPro2 = iconAndText2.transform.Find("TextMeshPro");
+                if (textMeshPro2 != null)
+                {
+                    var textComponent = textMeshPro2.GetComponent<TMPro.TextMeshPro>();
+                    if (textComponent != null)
+                    {
+                        textComponent.text = "Order 2";
+                    }
+                }
+            }
+            toolTipInstance.GetComponent<DynamicToolTip>().addContent(orderButton2Instance);
+
 
             if (atom1.m_data.m_abbre != "Dummy" && atom2.m_data.m_abbre != "Dummy")
             {
@@ -1497,7 +1574,63 @@ namespace chARpack
             toolTipInstance.GetComponent<ServerBondTooltip>().ToolTipText.text = toolTipText;
             toolTipInstance.GetComponent<ServerBondTooltip>().closeButton.onClick.AddListener(delegate { markBondTermUI(term, false); });
             toolTipInstance.GetComponent<ServerBondTooltip>().deleteButton.onClick.AddListener(delegate { GlobalCtrl.Singleton.deleteBondUI(bond); });
-            toolTipInstance.GetComponent<ServerBondTooltip>().modifyButton.onClick.AddListener(delegate { createServerChangeBondWindow(term); });
+            
+            // Find the correct index for this bond term
+            int termIndex = -1;
+            for (int i = 0; i < bondTerms.Count; i++)
+            {
+                if (bondTerms[i].Atom1 == term.Atom1 && bondTerms[i].Atom2 == term.Atom2)
+                {
+                    termIndex = i;
+                    break;
+                }
+            }
+            
+            // Add quick order buttons if they exist
+            var serverTooltip = toolTipInstance.GetComponent<ServerBondTooltip>();
+            if (serverTooltip.orderButton1 != null)
+            {
+                serverTooltip.orderButton1.onClick.AddListener(delegate { 
+                    if (termIndex >= 0)
+                    {
+                        var updatedTerm = bondTerms[termIndex];
+                        updatedTerm.order = 1; 
+                        bondTerms[termIndex] = updatedTerm;
+                        changeBondParameters(updatedTerm, termIndex);
+                        string updatedToolTipText = getBondToolTipText(updatedTerm.eqDist / 100, dist.getDistanceInAngstrom(), updatedTerm.order);
+                        toolTipInstance.GetComponent<ServerBondTooltip>().ToolTipText.text = updatedToolTipText;
+                    }
+                });
+            }
+            if (serverTooltip.orderButton2 != null)
+            {
+                serverTooltip.orderButton2.onClick.AddListener(delegate { 
+                    if (termIndex >= 0)
+                    {
+                        var updatedTerm = bondTerms[termIndex];
+                        updatedTerm.order = 2; 
+                        bondTerms[termIndex] = updatedTerm;
+                        changeBondParameters(updatedTerm, termIndex);
+                        string updatedToolTipText = getBondToolTipText(updatedTerm.eqDist / 100, dist.getDistanceInAngstrom(), updatedTerm.order);
+                        toolTipInstance.GetComponent<ServerBondTooltip>().ToolTipText.text = updatedToolTipText;
+                    }
+                });
+            }
+            if (serverTooltip.orderButton3 != null)
+            {
+                serverTooltip.orderButton3.onClick.AddListener(delegate { 
+                    if (termIndex >= 0)
+                    {
+                        var updatedTerm = bondTerms[termIndex];
+                        updatedTerm.order = 3; 
+                        bondTerms[termIndex] = updatedTerm;
+                        changeBondParameters(updatedTerm, termIndex);
+                        string updatedToolTipText = getBondToolTipText(updatedTerm.eqDist / 100, dist.getDistanceInAngstrom(), updatedTerm.order);
+                        toolTipInstance.GetComponent<ServerBondTooltip>().ToolTipText.text = updatedToolTipText;
+                    }
+                });
+            }
+            
             toolTipInstance.GetComponent<ServerBondTooltip>().localPosition = rectSave;
             toolTipInstance.GetComponent<ServerBondTooltip>().linkedBond = bond;
             if (atom1.m_data.m_abbre == "Dummy" || atom2.m_data.m_abbre == "Dummy")
@@ -1536,6 +1669,8 @@ namespace chARpack
 
             var cb = changeBondWindowInstance.GetComponent<BondParametersServer>();
             cb.bt = bond;
+            cb.molecule = this;
+            cb.bondTermId = bondTerms.IndexOf(bond);
             var id = bondTerms.IndexOf(bond);
             cb.saveButton.GetComponent<Button>().onClick.AddListener(delegate { changeBondParametersUI(changeBondWindowInstance, id); });
 #endif

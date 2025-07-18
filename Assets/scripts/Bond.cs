@@ -2,10 +2,16 @@ using System.Linq;
 using UnityEngine;
 using chARpack.ColorPalette;
 using System;
+#if CHARPACK_MRTK_2_8
+using Microsoft.MixedReality.Toolkit.Input;
+#endif
 
 namespace chARpack
 {
     public class Bond : MonoBehaviour
+#if CHARPACK_MRTK_2_8
+        , IMixedRealityPointerHandler
+#endif
     {
 
         public ushort atomID1;
@@ -161,21 +167,117 @@ namespace chARpack
         public void updateBondOrder(float newOrder)
         {
             m_bondOrder = newOrder;
-            
+
             // Update visual scale based on new bond order
             if (m_molecule != null && m_molecule.atomList.Count > Math.Max(atomID1, atomID2))
             {
                 Atom atom1 = m_molecule.atomList[atomID1];
                 Atom atom2 = m_molecule.atomList[atomID2];
-                
+
                 float offset1 = SettingsData.licoriceRendering ? 0f : atom1.m_data.m_radius * ForceField.scalingfactor * GlobalCtrl.atomScale * GlobalCtrl.scale * 0.8f * m_molecule.transform.localScale.x;
                 float offset2 = SettingsData.licoriceRendering ? 0f : atom2.m_data.m_radius * ForceField.scalingfactor * GlobalCtrl.atomScale * GlobalCtrl.scale * 0.8f * m_molecule.transform.localScale.x;
                 float distance = (Vector3.Distance(atom1.transform.position, atom2.transform.position) - offset1 - offset2) / m_molecule.transform.localScale.x;
-                
+
                 // Update scale with new bond order
                 transform.localScale = new Vector3(GlobalCtrl.Singleton.bondRadiusScale * m_bondOrder, GlobalCtrl.Singleton.bondRadiusScale * m_bondOrder, distance);
             }
         }
+
+#if CHARPACK_MRTK_2_8
+        /// <summary>
+        /// Handle pointer down events on the bond
+        /// </summary>
+        public void OnPointerDown(MixedRealityPointerEventData eventData)
+        {
+            // Empty implementation - bonds don't need pointer down handling
+        }
+
+        /// <summary>
+        /// Handle pointer dragged events on the bond
+        /// </summary>
+        public void OnPointerDragged(MixedRealityPointerEventData eventData)
+        {
+            // Empty implementation - bonds don't need drag handling
+        }
+
+        /// <summary>
+        /// Handle pointer up events on the bond
+        /// </summary>
+        public void OnPointerUp(MixedRealityPointerEventData eventData)
+        {
+            // Check if this is a quick click (not a drag)
+            if (GlobalCtrl.Singleton.currentInteractionMode == GlobalCtrl.InteractionModes.NORMAL)
+            {
+                // Check if user is currently building bonds (any atoms are marked)
+                bool atomsAreMarked = false;
+                foreach (var atom in m_molecule.atomList)
+                {
+                    if (atom.isMarked)
+                    {
+                        atomsAreMarked = true;
+                        break;
+                    }
+                }
+                
+                // Only create direct bond tooltip if no atoms are currently marked
+                // This prevents interference with normal atom-to-atom bonding
+                if (!atomsAreMarked)
+                {
+                    createBondToolTipFromBond();
+                    // Prevent event from bubbling up to parent molecule
+                    eventData.Use();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handle pointer clicked events on the bond
+        /// </summary>
+        public void OnPointerClicked(MixedRealityPointerEventData eventData)
+        {
+            // Prevent event from bubbling up to parent molecule when in normal mode
+            if (GlobalCtrl.Singleton.currentInteractionMode == GlobalCtrl.InteractionModes.NORMAL)
+            {
+                eventData.Use();
+            }
+        }
+
+        /// <summary>
+        /// Create bond tooltip directly from bond click
+        /// </summary>
+        private void createBondToolTipFromBond()
+        {
+            // Find the bond term that corresponds to this visual bond
+            for (int i = 0; i < m_molecule.bondTerms.Count; i++)
+            {
+                var bondTerm = m_molecule.bondTerms[i];
+                if (bondTerm.Contains(atomID1, atomID2))
+                {
+                    // Additional verification: ensure the atoms actually exist in the molecule
+                    if (atomID1 < m_molecule.atomList.Count && atomID2 < m_molecule.atomList.Count)
+                    {
+                        var atom1 = m_molecule.atomList[atomID1];
+                        var atom2 = m_molecule.atomList[atomID2];
+                        
+                        // Verify this is the correct bond by checking if it matches the visual bond
+                        if (atom1.getBond(atom2) == this)
+                        {
+                            // Use the actual bondTerm from the bondTerms list to ensure correct indexing
+                            if (LoginData.isServer)
+                            {
+                                m_molecule.createServerBondToolTip(bondTerm);
+                            }
+                            else
+                            {
+                                m_molecule.createBondToolTip(bondTerm);
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+#endif
 
     }
 }
