@@ -690,9 +690,14 @@ namespace chARpack
             int num_a2_connections = a2_con.Count;
 
             Dictionary<Atom, int> numConnectedAtoms = new Dictionary<Atom, int>();
-            if (a1.m_data.m_abbre != "H" && a1.m_data.m_abbre != "Dummy")
+            /*            if (a1.m_data.m_abbre != "H" && a1.m_data.m_abbre != "Dummy")
+                            numConnectedAtoms[a1] = num_a1_connections;
+                        if (a2.m_data.m_abbre != "H" && a2.m_data.m_abbre != "Dummy")
+                            numConnectedAtoms[a2] = num_a2_connections;*/
+
+            if (a1.m_data.m_abbre != "Dummy")
                 numConnectedAtoms[a1] = num_a1_connections;
-            if (a2.m_data.m_abbre != "H" && a2.m_data.m_abbre != "Dummy")
+            if (a2.m_data.m_abbre != "Dummy")
                 numConnectedAtoms[a2] = num_a2_connections;
 
             foreach (Atom a in b.m_molecule.atomList)
@@ -925,7 +930,12 @@ namespace chARpack
             Dictionary<Atom, int> numConnectedAtoms = new Dictionary<Atom, int>();
             foreach (var a in connectedAtomList)
             {
-                if (a.m_data.m_abbre != "H" && a.m_data.m_abbre != "Dummy")
+/*                if (a.m_data.m_abbre != "H" && a.m_data.m_abbre != "Dummy")
+                {
+                    var conAtoms = a.connectedAtoms();
+                    numConnectedAtoms[a] = conAtoms.Count;
+                }*/
+                if (a.m_data.m_abbre != "Dummy")
                 {
                     var conAtoms = a.connectedAtoms();
                     numConnectedAtoms[a] = conAtoms.Count;
@@ -944,7 +954,9 @@ namespace chARpack
                         if (!delAtomList.Contains(at))
                             delAtomList.Add(at);
 
-                        if (a.m_data.m_abbre == "H" && !delAtomList.Contains(a))
+/*                        if (a.m_data.m_abbre == "H" && !delAtomList.Contains(a))
+                            delAtomList.Add(a);*/
+                        if (!delAtomList.Contains(a))
                             delAtomList.Add(a);
 
                         conPos.Add(at.transform.localPosition);
