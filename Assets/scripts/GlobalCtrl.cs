@@ -2897,7 +2897,10 @@ namespace chARpack
             //if (isAnyAtomChanged)
             //    CFileHelper.SaveData(Application.streamingAssetsPath + "/MoleculeFolder/ElementData.xml", list_ElementData);
             //setColorPalette(defaultColor);
-
+#if UNITY_EDITOR
+            SaveMolecule(false, "AutoSavedMolecule_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+            Debug.Log("[AutoSave] Molecule saved in OnApplicationQuit");
+#endif
         }
     }
 }
