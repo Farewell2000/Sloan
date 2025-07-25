@@ -2246,7 +2246,9 @@ namespace chARpack
                     }
                     for (int i = 0; i < molecule.bondArray.Length; i++)
                     {
-                        CreateBond(tempMolecule.atomList.ElementAtOrDefault(molecule.bondArray[i].id1), tempMolecule.atomList.ElementAtOrDefault(molecule.bondArray[i].id2), tempMolecule);
+                        // create bond
+                        float tempBondOrder = molecule.bondArray[i].order;
+                        CreateBond(tempMolecule.atomList.ElementAtOrDefault(molecule.bondArray[i].id1), tempMolecule.atomList.ElementAtOrDefault(molecule.bondArray[i].id2), tempMolecule, tempBondOrder);
                     }
                     tempMolecule.freeze(molecule.frozen);
                     moveMolecule(freshMoleculeID, molecule.molePos + meanPos, molecule.moleQuat);
