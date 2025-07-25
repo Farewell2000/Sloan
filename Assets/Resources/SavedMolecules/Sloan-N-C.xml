@@ -3,9 +3,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>-0.189101681</x>
-      <y>0.191738129</y>
-      <z>0.521345139</z>
+      <x>-0.238419622</x>
+      <y>0.03818549</y>
+      <z>0.496968359</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -36,7 +36,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>35470f98-52a7-4a30-a0dc-2e394962a3d8</moleID>
+    <moleID>b390b4d6-2870-41bc-8ada-aede7896db70</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -44,9 +44,9 @@
         <abbre>N</abbre>
         <hybrid>3</hybrid>
         <pos>
-          <x>0.000372137874</x>
-          <y>8.029863E-05</y>
-          <z>-0.000165775418</z>
+          <x>0.000397097319</x>
+          <y>9.692274E-05</y>
+          <z>-0.000170916319</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -55,9 +55,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.0003200397</x>
-          <y>0.0511802733</y>
-          <z>-0.0001630187</z>
+          <x>0.000282544643</x>
+          <y>0.0511967428</y>
+          <z>-0.000246912241</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -66,9 +66,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.0418465771</x>
-          <y>-0.0163341127</y>
-          <z>-0.0238165259</z>
+          <x>-0.0419193134</x>
+          <y>-0.01640543</y>
+          <z>-0.0235847011</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -77,9 +77,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.000555329</x>
-          <y>-0.0162958354</y>
-          <z>0.0482302159</z>
+          <x>-0.000268239528</x>
+          <y>-0.016205227</y>
+          <z>0.048254393</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -166,9 +166,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>-0.0909096748</x>
-      <y>0.0428885221</y>
-      <z>0.514232</z>
+      <x>-0.11619404</x>
+      <y>-0.09446634</y>
+      <z>0.49157697</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -199,7 +199,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>3fbea00b-5b12-4691-8669-58d10dd8e072</moleID>
+    <moleID>659cd1c1-61f1-4779-b3fa-4251b5e6abee</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -207,9 +207,9 @@
         <abbre>N</abbre>
         <hybrid>3</hybrid>
         <pos>
-          <x>-0.00207628123</x>
-          <y>-0.0131861912</y>
-          <z>-0.00152722</z>
+          <x>-0.000866511837</x>
+          <y>-0.00768274069</y>
+          <z>-0.00377248973</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -218,9 +218,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.0295167044</x>
-          <y>0.0147927273</y>
-          <z>-0.03034167</z>
+          <x>0.0306032412</x>
+          <y>0.0196703337</y>
+          <z>-0.03331352</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -229,9 +229,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.04878048</x>
-          <y>0.00743706245</y>
-          <z>-0.00367432833</z>
+          <x>-0.047582332</x>
+          <y>0.0128863659</y>
+          <z>-0.00617139041</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -240,9 +240,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.014266884</x>
-          <y>-0.0117044151</y>
-          <z>0.04686609</z>
+          <x>0.0156755652</x>
+          <y>-0.00515662134</y>
+          <z>0.0445099175</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -329,9 +329,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>-0.207725331</x>
-      <y>0.08429968</y>
-      <z>0.5226188</z>
+      <x>-0.234879181</x>
+      <y>-0.06010352</y>
+      <z>0.5102134</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -362,7 +362,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>b75c62a0-965d-4189-a216-db607f7a79ab</moleID>
+    <moleID>5f270325-97bf-4b59-a9e8-9a4cd5bc6717</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -370,9 +370,9 @@
         <abbre>N</abbre>
         <hybrid>2</hybrid>
         <pos>
-          <x>-0.006834306</x>
-          <y>-0.006839633</y>
-          <z>0.0122209638</z>
+          <x>0.0015388988</x>
+          <y>0.0152629334</y>
+          <z>-0.00274136662</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -381,9 +381,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.03555797</x>
-          <y>0.012319684</y>
-          <z>0.0168446451</z>
+          <x>0.0288961455</x>
+          <y>-0.00568632968</y>
+          <z>0.028854087</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -392,9 +392,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.0287236087</x>
-          <y>-0.00547991134</y>
-          <z>-0.0290654972</z>
+          <x>-0.0304351188</x>
+          <y>-0.009576594</y>
+          <z>-0.0261127949</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -432,9 +432,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>-0.343198746</x>
-      <y>0.0241794586</y>
-      <z>0.538215756</z>
+      <x>-0.367670357</x>
+      <y>-0.101537615</y>
+      <z>0.5138405</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -465,7 +465,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>467f6f5d-fe76-4c93-b3d5-200193984209</moleID>
+    <moleID>5e9b1e8a-558a-4d73-bfd2-8024dbd63f00</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -473,9 +473,9 @@
         <abbre>N</abbre>
         <hybrid>3</hybrid>
         <pos>
-          <x>9.55536962E-05</x>
-          <y>-0.000110862311</y>
-          <z>-6.578863E-05</z>
+          <x>4.78327274E-05</x>
+          <y>-0.000136727467</y>
+          <z>-3.03983688E-05</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -484,9 +484,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.000464767218</x>
-          <y>0.05098503</y>
-          <z>0.000259876251</z>
+          <x>-0.000449568033</x>
+          <y>0.0509604961</y>
+          <z>0.0001617521</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -495,9 +495,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.0420359522</x>
-          <y>-0.0167963132</y>
-          <z>-0.023682341</z>
+          <x>-0.0420643</x>
+          <y>-0.0168312434</y>
+          <z>-0.0236751512</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -506,9 +506,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.0005085394</x>
-          <y>-0.016799232</y>
-          <z>0.0482285023</z>
+          <x>-0.000658929348</x>
+          <y>-0.0166988838</y>
+          <z>0.04830599</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -595,9 +595,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>0.282208174</x>
-      <y>0.115556836</y>
-      <z>0.5271131</z>
+      <x>0.4073456</x>
+      <y>-0.0161847658</y>
+      <z>0.5027378</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -628,7 +628,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>202437dc-c962-49ce-86b1-b5d0a5ccd760</moleID>
+    <moleID>fa498ea6-c7aa-4c41-b81c-9642a45919eb</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -636,8 +636,8 @@
         <abbre>C</abbre>
         <hybrid>3</hybrid>
         <pos>
-          <x>-7.4505806E-08</x>
-          <y>0</y>
+          <x>0</x>
+          <y>1.39698386E-08</y>
           <z>-7.4505806E-08</z>
         </pos>
         <keepConfig>false</keepConfig>
@@ -647,9 +647,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.0141792</x>
-          <y>0.0523412228</y>
-          <z>-0.005440116</z>
+          <x>0.0178291649</x>
+          <y>0.05119496</y>
+          <z>-0.00560801476</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -658,9 +658,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.054323934</x>
-          <y>-0.00429029576</y>
-          <z>-0.0008729845</z>
+          <x>-0.05449809</x>
+          <y>-0.000386300962</y>
+          <z>-0.000240728259</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -669,9 +669,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.0189753249</x>
-          <y>-0.0191328023</y>
-          <z>0.047372058</z>
+          <x>0.0181042776</x>
+          <y>-0.020479653</y>
+          <z>0.04714936</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -680,9 +680,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.0211691111</x>
-          <y>-0.0289181434</y>
-          <z>-0.0410592556</z>
+          <x>0.0185646862</x>
+          <y>-0.0303289481</y>
+          <z>-0.0413008779</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -878,9 +878,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>0.319303721</x>
-      <y>0.0100092888</y>
-      <z>0.536101</z>
+      <x>0.3761306</x>
+      <y>-0.12275032</y>
+      <z>0.511746943</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -911,7 +911,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>40535fd7-895b-486c-8e11-9d93d77879ef</moleID>
+    <moleID>21ee744b-a8d1-40ac-b35e-e379af0661b8</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -920,7 +920,7 @@
         <hybrid>3</hybrid>
         <pos>
           <x>-7.4505806E-08</x>
-          <y>2.32830644E-09</y>
+          <y>0</y>
           <z>0</z>
         </pos>
         <keepConfig>false</keepConfig>
@@ -931,7 +931,7 @@
         <hybrid>0</hybrid>
         <pos>
           <x>-0.05176153</x>
-          <y>0.0170533322</y>
+          <y>0.0170533825</y>
           <z>0.000431835651</z>
         </pos>
         <keepConfig>false</keepConfig>
@@ -941,9 +941,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.00226143748</x>
-          <y>-0.05069015</y>
-          <z>-0.019890815</z>
+          <x>0.002261363</x>
+          <y>-0.0506901667</y>
+          <z>-0.0198907778</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -953,7 +953,7 @@
         <hybrid>0</hybrid>
         <pos>
           <x>0.01970768</x>
-          <y>0.000473561231</y>
+          <y>0.000473577529</y>
           <z>0.0508097559</z>
         </pos>
         <keepConfig>false</keepConfig>
@@ -963,9 +963,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.0297921523</x>
-          <y>0.03316327</y>
-          <z>-0.0313507766</z>
+          <x>0.02979219</x>
+          <y>0.0331632048</y>
+          <z>-0.0313508138</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1161,9 +1161,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>0.210676149</x>
-      <y>0.2633232</y>
-      <z>0.514569163</z>
+      <x>0.16110301</x>
+      <y>0.13861078</y>
+      <z>0.49019286</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -1194,7 +1194,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>8d64909e-7021-445a-9ac3-b3fe636a4ff8</moleID>
+    <moleID>5c9d6e91-43d2-4c5c-a0cd-e27c930fe49d</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -1202,9 +1202,9 @@
         <abbre>C</abbre>
         <hybrid>2</hybrid>
         <pos>
-          <x>2.60770321E-07</x>
-          <y>2.60770321E-07</y>
-          <z>-7.4505806E-07</z>
+          <x>-7.636845E-07</x>
+          <y>-6.146729E-07</y>
+          <z>7.82310963E-07</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1213,9 +1213,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.0107122585</x>
-          <y>0.043511726</y>
-          <z>0.0210288167</z>
+          <x>-0.0105962157</x>
+          <y>0.04340077</y>
+          <z>0.0213152543</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1224,9 +1224,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.0292719156</x>
-          <y>-0.0181899965</y>
-          <z>-0.0355325267</z>
+          <x>-0.026184395</x>
+          <y>-0.0154329278</y>
+          <z>-0.0390698</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1235,9 +1235,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.0399820879</x>
-          <y>-0.0253234059</y>
-          <z>0.0145049393</z>
+          <x>0.0367811136</x>
+          <y>-0.0279677</y>
+          <z>0.01775425</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1324,9 +1324,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>0.055749435</x>
-      <y>0.239575148</y>
-      <z>0.516918063</z>
+      <x>0.031277813</x>
+      <y>0.113858074</y>
+      <z>0.4925428</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -1357,7 +1357,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>8bd67e05-2b38-4cb7-b554-b4b79a305c14</moleID>
+    <moleID>d18f3421-1665-4bf9-b215-b35f9f47b36c</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -1367,7 +1367,7 @@
         <pos>
           <x>9.313226E-09</x>
           <y>-5.21540642E-07</y>
-          <z>-2.23517418E-07</z>
+          <z>-2.60770321E-07</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1376,9 +1376,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.0026788516</x>
+          <x>0.00267885625</x>
           <y>0.04785478</y>
-          <z>-0.0123673677</z>
+          <z>-0.0123673305</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1388,7 +1388,7 @@
         <hybrid>0</hybrid>
         <pos>
           <x>-0.0440898836</x>
-          <y>-0.0211414881</y>
+          <y>-0.0211414788</y>
           <z>0.007706359</z>
         </pos>
         <keepConfig>false</keepConfig>
@@ -1398,8 +1398,8 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.0414108448</x>
-          <y>-0.0267158635</y>
+          <x>0.04141084</x>
+          <y>-0.0267158542</y>
           <z>0.004656315</z>
         </pos>
         <keepConfig>false</keepConfig>
@@ -1487,9 +1487,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>-0.039589</x>
-      <y>0.218465567</y>
-      <z>0.518920243</z>
+      <x>-0.06406062</x>
+      <y>0.09274849</y>
+      <z>0.494544983</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -1520,7 +1520,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>45b95127-a554-4e35-b361-315f25f652a8</moleID>
+    <moleID>0b00a7d9-70e2-44c1-873c-1c62d5332a92</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -1528,9 +1528,9 @@
         <abbre>C</abbre>
         <hybrid>2</hybrid>
         <pos>
-          <x>-4.656613E-09</x>
-          <y>1.86264515E-07</y>
-          <z>-4.47034836E-07</z>
+          <x>-1.86264515E-08</x>
+          <y>2.32830644E-07</y>
+          <z>-7.4505806E-08</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1539,9 +1539,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.000148084946</x>
-          <y>0.0491087139</y>
-          <z>-0.006211996</z>
+          <x>0.000148126855</x>
+          <y>0.04910851</y>
+          <z>-0.00621341169</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1550,9 +1550,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.0429176763</x>
-          <y>-0.024608504</y>
-          <z>0.00165358186</z>
+          <x>-0.0429176465</x>
+          <y>-0.0246086717</y>
+          <z>0.00165216625</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1561,9 +1561,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.04276933</x>
-          <y>-0.0244986825</y>
-          <z>0.004564598</z>
+          <x>0.04276938</x>
+          <y>-0.02449886</y>
+          <z>0.00456318259</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1650,9 +1650,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>0.131239608</x>
-      <y>0.170968771</y>
-      <z>0.522655845</z>
+      <x>0.106767982</x>
+      <y>0.0452516973</y>
+      <z>0.498280585</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -1683,7 +1683,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>f8f48474-8bcb-4d3e-90ce-524091a4aaa8</moleID>
+    <moleID>ac42b826-3ec9-48c0-8c94-d8d0f736a004</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -1691,9 +1691,9 @@
         <abbre>C</abbre>
         <hybrid>2</hybrid>
         <pos>
-          <x>2.42143869E-07</x>
-          <y>3.35276127E-07</y>
-          <z>7.4505806E-07</z>
+          <x>5.30853868E-07</x>
+          <y>4.84287739E-07</y>
+          <z>1.2665987E-06</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1702,9 +1702,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.00160884112</x>
-          <y>0.0479730219</y>
-          <z>-0.0120939314</z>
+          <x>-0.00161003321</x>
+          <y>0.0479724929</y>
+          <z>-0.0120959431</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1713,9 +1713,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>-0.0364204571</x>
-          <y>-0.01997117</y>
-          <z>0.0269251317</z>
+          <x>-0.0364215672</x>
+          <y>-0.01997167</y>
+          <z>0.026923269</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1724,9 +1724,9 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.03803242</x>
-          <y>-0.0279997662</y>
-          <z>-0.0148248672</z>
+          <x>0.038031172</x>
+          <y>-0.0280003063</y>
+          <z>-0.0148269534</z>
         </pos>
         <keepConfig>false</keepConfig>
       </cmlAtom>
@@ -1813,9 +1813,9 @@
   <cmlData>
     <name />
     <molePos>
-      <x>0.14053525</x>
-      <y>0.02188325</y>
-      <z>0.535438538</z>
+      <x>0.116063625</x>
+      <y>-0.103833824</y>
+      <z>0.5110633</z>
     </molePos>
     <ssPos>
       <x>0</x>
@@ -1846,7 +1846,7 @@
       <z>0</z>
       <w>1</w>
     </relQuat>
-    <moleID>8709078d-406c-44b1-9889-ba2c8a1076e7</moleID>
+    <moleID>53150a6f-445d-491c-9867-6c4f4a5645eb</moleID>
     <keepConfig>true</keepConfig>
     <atomArray>
       <cmlAtom>
@@ -1865,7 +1865,7 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.00445334241</x>
+          <x>0.004453333</x>
           <y>0.04883095</y>
           <z>-0.00677861273</z>
         </pos>
@@ -1877,7 +1877,7 @@
         <hybrid>0</hybrid>
         <pos>
           <x>-0.0449205562</x>
-          <y>-0.0206247009</y>
+          <y>-0.0206246972</y>
           <z>0.00264912844</z>
         </pos>
         <keepConfig>false</keepConfig>
@@ -1887,7 +1887,7 @@
         <abbre>Dummy</abbre>
         <hybrid>0</hybrid>
         <pos>
-          <x>0.04046727</x>
+          <x>0.04046725</x>
           <y>-0.0282073021</y>
           <z>0.00412344933</z>
         </pos>
@@ -1967,6 +1967,289 @@
         <angle>180</angle>
         <k0>450</k0>
         <nn>2</nn>
+      </cmlTorsion>
+    </torsionArray>
+    <frozen>false</frozen>
+    <TransitionTriggeredFromId>-1</TransitionTriggeredFromId>
+    <formulaSVGstring />
+  </cmlData>
+  <cmlData>
+    <name />
+    <molePos>
+      <x>0.259319276</x>
+      <y>0.03376951</y>
+      <z>0.563960433</z>
+    </molePos>
+    <ssPos>
+      <x>0</x>
+      <y>0</y>
+    </ssPos>
+    <ssBounds>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+      <w>0</w>
+    </ssBounds>
+    <moleScale>
+      <x>0.8</x>
+      <y>0.8</y>
+      <z>0.8</z>
+    </moleScale>
+    <moleTransitioned>false</moleTransitioned>
+    <transitionTriggeredBy>-1</transitionTriggeredBy>
+    <moleQuat>
+      <x>-0</x>
+      <y>-0</y>
+      <z>-0</z>
+      <w>1</w>
+    </moleQuat>
+    <relQuat>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+      <w>1</w>
+    </relQuat>
+    <moleID>ec689ccb-2a6f-4d49-8e82-bc7e056ad2a4</moleID>
+    <keepConfig>true</keepConfig>
+    <atomArray>
+      <cmlAtom>
+        <id>0</id>
+        <abbre>C</abbre>
+        <hybrid>3</hybrid>
+        <pos>
+          <x>0</x>
+          <y>0</y>
+          <z>0</z>
+        </pos>
+        <keepConfig>false</keepConfig>
+      </cmlAtom>
+      <cmlAtom>
+        <id>1</id>
+        <abbre>Dummy</abbre>
+        <hybrid>0</hybrid>
+        <pos>
+          <x>0.007139519</x>
+          <y>0.05239588</y>
+          <z>0.0131890178</z>
+        </pos>
+        <keepConfig>false</keepConfig>
+      </cmlAtom>
+      <cmlAtom>
+        <id>2</id>
+        <abbre>Dummy</abbre>
+        <hybrid>0</hybrid>
+        <pos>
+          <x>-0.0502116978</x>
+          <y>-0.0156504568</y>
+          <z>0.0142862648</z>
+        </pos>
+        <keepConfig>false</keepConfig>
+      </cmlAtom>
+      <cmlAtom>
+        <id>3</id>
+        <abbre>Dummy</abbre>
+        <hybrid>0</hybrid>
+        <pos>
+          <x>0.0367107242</x>
+          <y>-0.0305167679</y>
+          <z>0.0262925774</z>
+        </pos>
+        <keepConfig>false</keepConfig>
+      </cmlAtom>
+      <cmlAtom>
+        <id>4</id>
+        <abbre>Dummy</abbre>
+        <hybrid>0</hybrid>
+        <pos>
+          <x>0.00636145473</x>
+          <y>-0.006228655</y>
+          <z>-0.05376786</z>
+        </pos>
+        <keepConfig>false</keepConfig>
+      </cmlAtom>
+    </atomArray>
+    <bondArray>
+      <cmlBond>
+        <id1>0</id1>
+        <id2>1</id2>
+        <order>1</order>
+        <eqDist>109</eqDist>
+        <kb>2.1</kb>
+      </cmlBond>
+      <cmlBond>
+        <id1>0</id1>
+        <id2>2</id2>
+        <order>1</order>
+        <eqDist>109</eqDist>
+        <kb>2.1</kb>
+      </cmlBond>
+      <cmlBond>
+        <id1>0</id1>
+        <id2>3</id2>
+        <order>1</order>
+        <eqDist>109</eqDist>
+        <kb>2.1</kb>
+      </cmlBond>
+      <cmlBond>
+        <id1>0</id1>
+        <id2>4</id2>
+        <order>1</order>
+        <eqDist>109</eqDist>
+        <kb>2.1</kb>
+      </cmlBond>
+    </bondArray>
+    <angleArray>
+      <cmlAngle>
+        <id1>1</id1>
+        <id2>0</id2>
+        <id3>2</id3>
+        <angle>109.471</angle>
+        <ka>10124.9727</ka>
+      </cmlAngle>
+      <cmlAngle>
+        <id1>1</id1>
+        <id2>0</id2>
+        <id3>3</id3>
+        <angle>109.471</angle>
+        <ka>10124.9727</ka>
+      </cmlAngle>
+      <cmlAngle>
+        <id1>2</id1>
+        <id2>0</id2>
+        <id3>3</id3>
+        <angle>109.471</angle>
+        <ka>10124.9727</ka>
+      </cmlAngle>
+      <cmlAngle>
+        <id1>1</id1>
+        <id2>0</id2>
+        <id3>4</id3>
+        <angle>109.471</angle>
+        <ka>10124.9727</ka>
+      </cmlAngle>
+      <cmlAngle>
+        <id1>2</id1>
+        <id2>0</id2>
+        <id3>4</id3>
+        <angle>109.471</angle>
+        <ka>10124.9727</ka>
+      </cmlAngle>
+      <cmlAngle>
+        <id1>3</id1>
+        <id2>0</id2>
+        <id3>4</id3>
+        <angle>109.471</angle>
+        <ka>10124.9727</ka>
+      </cmlAngle>
+    </angleArray>
+    <torsionArray>
+      <cmlTorsion>
+        <id1>1</id1>
+        <id2>0</id2>
+        <id3>3</id3>
+        <id4>2</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>1</id1>
+        <id2>0</id2>
+        <id3>4</id3>
+        <id4>2</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>1</id1>
+        <id2>0</id2>
+        <id3>2</id3>
+        <id4>3</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>1</id1>
+        <id2>0</id2>
+        <id3>4</id3>
+        <id4>3</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>2</id1>
+        <id2>0</id2>
+        <id3>1</id3>
+        <id4>3</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>2</id1>
+        <id2>0</id2>
+        <id3>4</id3>
+        <id4>3</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>1</id1>
+        <id2>0</id2>
+        <id3>2</id3>
+        <id4>4</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>1</id1>
+        <id2>0</id2>
+        <id3>3</id3>
+        <id4>4</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>2</id1>
+        <id2>0</id2>
+        <id3>1</id3>
+        <id4>4</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>2</id1>
+        <id2>0</id2>
+        <id3>3</id3>
+        <id4>4</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>3</id1>
+        <id2>0</id2>
+        <id3>1</id3>
+        <id4>4</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
+      </cmlTorsion>
+      <cmlTorsion>
+        <id1>3</id1>
+        <id2>0</id2>
+        <id3>2</id3>
+        <id4>4</id4>
+        <angle>120</angle>
+        <k0>225</k0>
+        <nn>3</nn>
       </cmlTorsion>
     </torsionArray>
     <frozen>false</frozen>
