@@ -1862,10 +1862,10 @@ namespace chARpack
         /// <param name="atom1">first atom of the connection</param>
         /// <param name="atom2">second atom of the connection</param>
         /// <param name="inputMole">molecule to which the atoms and the connection belong</param>
-        public void CreateBond(Atom atom1, Atom atom2, Molecule inputMole)
+        public void CreateBond(Atom atom1, Atom atom2, Molecule inputMole, float bondOrder = 1.0f)
         {
             Bond tempBond = Instantiate(bondPrefab);
-            tempBond.f_Init(atom1, atom2, inputMole);
+            tempBond.f_Init(atom1, atom2, inputMole, bondOrder);
         }
 
         /// <summary>
