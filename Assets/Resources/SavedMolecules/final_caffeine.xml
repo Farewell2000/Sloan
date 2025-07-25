@@ -434,7 +434,7 @@
       <cmlBond>
         <id1>16</id1>
         <id2>18</id2>
-        <order>1</order>
+        <order>2</order>
         <eqDist>127.5</eqDist>
         <kb>2.1</kb>
       </cmlBond>
