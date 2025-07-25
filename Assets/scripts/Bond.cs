@@ -27,12 +27,12 @@ namespace chARpack
         /// <param name="_atom1">the first atom of the bond</param>
         /// <param name="_atom2">the second atom of the bond</param>
         /// <param name="inputMole">the molecule to which the bond belongs</param>
-        public void f_Init(Atom _atom1, Atom _atom2, Molecule inputMole)
+        public void f_Init(Atom _atom1, Atom _atom2, Molecule inputMole, float bond_order = 1.0f)
         {
             atomID1 = _atom1.m_id;
             atomID2 = _atom2.m_id;
             m_molecule = inputMole;
-            m_bondOrder = 1.0f;   // standard
+            m_bondOrder = bond_order;   // standard
             m_bondDistance = 1.0f;
             gameObject.tag = "Bond";
             gameObject.layer = 7;
